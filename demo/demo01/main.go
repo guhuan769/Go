@@ -1,8 +1,8 @@
 package main
 
-import hello "HellowGolang/pakage"
-import hello2 "HellowGolang/pakage/package2"
+import hello "HellowGolang/pakage""
 
+import hello2 "HellowGolang/pakage/package2
 // 程序入口 func 声明
 func main() {
 	/*
