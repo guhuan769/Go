@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b9934e0-402b-4c75-a98f-e9a6feeed046" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goping.go" beforeDir="false" afterPath="$PROJECT_DIR$/goping.go" afterDir="false" />
+    <list default="true" id="f5f4424b-8730-41d1-bb4d-d46d1d8a7738" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../goping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../goping/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goping/goping.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goping/goping.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +24,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="2PgT6BEpsgYYSTpICYaZVF1NOUg" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/data/data.go" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="2PrqQaqSC2PsFYVhhKA4HOuCiMf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,12 +49,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go.vgo",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="App Engine" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="goping" />
+      <module name="CourseManagement" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="DIRECTORY" />
       <directory value="$PROJECT_DIR$" />
@@ -59,12 +66,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="0b9934e0-402b-4c75-a98f-e9a6feeed046" name="更改" comment="" />
-      <created>1683877550852</created>
+      <changelist id="f5f4424b-8730-41d1-bb4d-d46d1d8a7738" name="更改" comment="" />
+      <created>1684225535651</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1683877550852</updated>
-      <workItem from="1683877551874" duration="23994000" />
+      <updated>1684225535651</updated>
+      <workItem from="1684225536658" duration="18213000" />
     </task>
     <servers />
   </component>
@@ -72,7 +79,10 @@
     <option name="version" value="3" />
   </component>
   <component name="VgoProject">
-    <integration-enabled>false</integration-enabled>
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

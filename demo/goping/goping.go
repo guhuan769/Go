@@ -111,6 +111,7 @@ func main() {
 		fmt.Printf("来自 %d.%d.%d.%d 的回复: 字节=%d 时间=%dms TTL=%d\n", buf[12], buf[13], buf[14], buf[15], n-28, ts, buf[8])
 		sucessCount++
 	}
+
 	fmt.Printf("%s 的 Ping 统计信息:\n    数据包: 已发送 = %d，已接收 = %d，丢失 = %d (%.2f%% 丢失)，\n往返行程的估计时间(以毫秒为单位):\n    最短 = %dms，最长 = %dms，平均 = %dms",
 		conn.RemoteAddr(), sendCount, sucessCount, failCount, float64(failCount)/float64(sendCount), minTs, maxTs, totalTs/sendCount)
 }
