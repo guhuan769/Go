@@ -3,6 +3,7 @@ package teacher
 import (
 	"CourseManagement/common"
 	"CourseManagement/data"
+	"encoding/json"
 	"time"
 )
 
@@ -17,9 +18,9 @@ type TeacherData struct {
 	tableName data.TableName
 }
 
-func NewCourseData() *TeacherData {
+func NewTeacherData() *TeacherData {
 	return &TeacherData{
-		tableName: data.Class,
+		tableName: data.Teacher,
 	}
 }
 
@@ -74,4 +75,9 @@ func (d *TeacherData) Get(id ...int) ([]*Teacher, error) {
 		}
 	}
 	return list, err
+}
+
+func (t *Teacher) String() string {
+	bytes, _ := json.Marshal(t)
+	return string(bytes)
 }

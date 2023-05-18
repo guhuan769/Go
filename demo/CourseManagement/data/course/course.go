@@ -1,6 +1,9 @@
 package course
 
-import "CourseManagement/data"
+import (
+	"CourseManagement/data"
+	"sync"
+)
 
 type Course struct {
 	ID            int
@@ -9,6 +12,7 @@ type Course struct {
 	StuIDList     map[int]int
 	ClassIDList   map[int]int
 	LastClassID   int
+	sync.RWMutex  //枷锁
 }
 
 type CourseData struct {
@@ -72,4 +76,35 @@ func (d *CourseData) Get(id ...int) ([]*Course, error) {
 		}
 	}
 	return list, err
+}
+
+func (c *Course) AddStu(stuId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	if c.StuIDList == nil {
+		c.StuIDList = make(map[int]int) //初值
+	}
+	for _, id := range stuId {
+		c.StuIDList[id] = id
+	}
+}
+
+func (c *Course) DelStu(stuId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	for _, id := range stuId {
+		delete(c.StuIDList, id)
+		//c.StuIDList[id] = id
+	}
+}
+
+func (c *Course) AddTeacher(teacherId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	if c.TeacherIDList == nil {
+		c.TeacherIDList = make(map[int]int) //初值
+	}
+	for _, id := range teacherId {
+		c.TeacherIDList[id] = id
+	}
 }

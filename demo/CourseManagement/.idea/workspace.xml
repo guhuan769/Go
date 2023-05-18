@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5f4424b-8730-41d1-bb4d-d46d1d8a7738" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../goping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../goping/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goping/goping.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goping/goping.go" afterDir="false" />
+    <list default="true" id="6a252b2f-7f11-437e-b518-5c0892917949" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/course/course.go" beforeDir="false" afterPath="$PROJECT_DIR$/data/course/course.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/teacher/teacher.go" beforeDir="false" afterPath="$PROJECT_DIR$/data/teacher/teacher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/data/data.go" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="2PrqQaqSC2PsFYVhhKA4HOuCiMf" />
+  <component name="ProjectId" id="2PxGdqOmLSPjyWPGlmmhBWUhgb1" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -38,51 +38,47 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "go.vgo",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="App Engine" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="CourseManagement" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="f5f4424b-8730-41d1-bb4d-d46d1d8a7738" name="更改" comment="" />
-      <created>1684225535651</created>
+      <changelist id="6a252b2f-7f11-437e-b518-5c0892917949" name="更改" comment="" />
+      <created>1684391409145</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684225535651</updated>
-      <workItem from="1684225536658" duration="18213000" />
+      <updated>1684391409145</updated>
+      <workItem from="1684391410353" duration="9500000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
