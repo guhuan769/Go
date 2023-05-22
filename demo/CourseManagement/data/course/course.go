@@ -2,6 +2,7 @@ package course
 
 import (
 	"CourseManagement/data"
+	"encoding/json"
 	"sync"
 )
 
@@ -98,6 +99,26 @@ func (c *Course) DelStu(stuId ...int) {
 	}
 }
 
+func (c *Course) AddClass(classId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	if c.ClassIDList == nil {
+		c.ClassIDList = make(map[int]int) //初值
+	}
+	for _, id := range classId {
+		c.ClassIDList[id] = id
+	}
+}
+
+func (c *Course) DelClass(classId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	for _, id := range classId {
+		delete(c.ClassIDList, id)
+		//c.StuIDList[id] = id
+	}
+}
+
 func (c *Course) AddTeacher(teacherId ...int) {
 	c.Lock()
 	defer c.Unlock()
@@ -107,4 +128,8 @@ func (c *Course) AddTeacher(teacherId ...int) {
 	for _, id := range teacherId {
 		c.TeacherIDList[id] = id
 	}
+}
+func (c *Course) String() string {
+	bytes, _ := json.Marshal(c)
+	return string(bytes)
 }

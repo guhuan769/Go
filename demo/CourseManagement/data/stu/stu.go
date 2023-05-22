@@ -3,6 +3,8 @@ package stu
 import (
 	"CourseManagement/common"
 	"CourseManagement/data"
+	"encoding/json"
+	"sync"
 	"time"
 )
 
@@ -13,6 +15,7 @@ type Stu struct {
 	Birthday     time.Time     //生日日期
 	CourseIDList map[int]int   //int切片
 	ClassIDList  map[int]int   //班级信息
+	sync.RWMutex               //加一个读写锁
 }
 
 type StuData struct {
@@ -76,6 +79,51 @@ func (d *StuData) Get(id ...int) ([]*Stu, error) {
 		}
 	}
 	return list, err
+}
+
+func (c *Stu) AddCourse(courseId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	if c.CourseIDList == nil {
+		c.CourseIDList = make(map[int]int) //初值
+	}
+	for _, id := range courseId {
+		c.CourseIDList[id] = id
+	}
+}
+
+func (c *Stu) DelCourse(courseId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	for _, id := range courseId {
+		delete(c.CourseIDList, id)
+		//c.StuIDList[id] = id
+	}
+}
+
+func (c *Stu) AddClass(classId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	if c.ClassIDList == nil {
+		c.ClassIDList = make(map[int]int) //初值
+	}
+	for _, id := range classId {
+		c.ClassIDList[id] = id
+	}
+}
+
+func (c *Stu) DelClass(classId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	for _, id := range classId {
+		delete(c.ClassIDList, id)
+		//c.StuIDList[id] = id
+	}
+}
+
+func (s *Stu) String() string {
+	bytes, _ := json.Marshal(s)
+	return string(bytes)
 }
 
 //func (d StuData) Add(stu *Stu) (int, error) {

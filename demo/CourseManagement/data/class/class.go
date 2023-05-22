@@ -1,12 +1,18 @@
 package class
 
-import "CourseManagement/data"
+import (
+	"CourseManagement/data"
+	"encoding/json"
+	"sync"
+)
 
 type Class struct {
 	ID           int
 	Name         string
 	StuIDList    map[int]int
 	HeadmasterID int
+	sync.RWMutex
+	CourseID int
 }
 
 type ClassData struct {
@@ -70,4 +76,28 @@ func (d *ClassData) Get(id ...int) ([]*Class, error) {
 		}
 	}
 	return list, err
+}
+
+func (c *Class) AddStu(classId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	if c.StuIDList == nil {
+		c.StuIDList = make(map[int]int) //初值
+	}
+	for _, id := range classId {
+		c.StuIDList[id] = id
+	}
+}
+
+func (c *Class) DelStu(classId ...int) {
+	c.Lock()
+	defer c.Unlock()
+	for _, id := range classId {
+		delete(c.StuIDList, id)
+		//c.StuIDList[id] = id
+	}
+}
+func (c *Class) String() string {
+	bytes, _ := json.Marshal(c)
+	return string(bytes)
 }
