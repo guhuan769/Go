@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6a252b2f-7f11-437e-b518-5c0892917949" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/class/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/data/class/class.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/course/course.go" beforeDir="false" afterPath="$PROJECT_DIR$/data/course/course.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/stu/stu.go" beforeDir="false" afterPath="$PROJECT_DIR$/data/stu/stu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/course.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/course.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/stu.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/stu.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +48,25 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="CourseManagement" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="CourseManagement" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -64,7 +77,8 @@
       <updated>1684391409145</updated>
       <workItem from="1684391410353" duration="9500000" />
       <workItem from="1684403857505" duration="13959000" />
-      <workItem from="1684715737627" duration="10835000" />
+      <workItem from="1684715737627" duration="11103000" />
+      <workItem from="1684995676988" duration="169000" />
     </task>
     <servers />
   </component>
