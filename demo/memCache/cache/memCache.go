@@ -1,7 +1,6 @@
 package cache
 
 import (
-	"fmt"
 	"sync"
 	"time"
 )
@@ -12,6 +11,8 @@ type memCache struct { //定义一个结构体
 	maxMemorySizeStr string
 	//最大内存
 	maxMemorySize int64
+	// 当前使用内存大小
+	currMemorySize int64
 	//缓存键值对
 	values map[string]*memCacheValue
 	//读写锁  通过读写锁 可以让多个携程进行并发读
@@ -51,32 +52,79 @@ func (mc *memCache) Set(key string, val interface{}, expire time.Duration) bool 
 		expire:    expire,
 		size:      valSize,
 	}
+	mc.del(key)
+	mc.add(key, mcv)
 
-	return false
+	if mc.currMemorySize > mc.maxMemorySize {
+		mc.del(key)
+		return false
+	}
+	return true
 }
 
 // 根据key值获取value
-func (mc memCache) Get(key string) (interface{}, bool) {
-	fmt.Println("called func get")
+func (mc *memCache) Get(key string) (interface{}, bool) {
+	mc.locker.RLock() //读锁
+	defer mc.locker.RUnlock()
+	mcv, ok := mc.get(key)
+	if ok {
+		if mcv.expire != 0 && time.Now().After(mcv.inserTime.Add(mcv.expire)) {
+			mc.del(key)
+			return nil, false
+		}
+		return mcv, ok
+	}
 	return nil, false
 }
 
 // 删除key值
 func (mc *memCache) Del(key string) bool {
-
-	return false
+	mc.locker.Lock()
+	defer mc.locker.Unlock()
+	mc.del(key)
+	return true
 }
 
 // 判断key是否存在
 func (mc *memCache) Exists(key string) bool {
+	mc.locker.RLock()
+	defer mc.locker.Unlock()
+	_, ok := mc.values[key]
+	return ok
 	return false
 
-} //清空所有key
+}
+
+// 清空所有key
 func (mc *memCache) Flush() bool {
-	return false
+	mc.locker.Lock()
+	defer mc.locker.Unlock()
+	mc.values = make(map[string]*memCacheValue, 0)
+	mc.currMemorySize = 0
+	return true
 }
 
 // 获取缓存中所有key的数量
 func (mc *memCache) Keys() int64 {
-	return 0
+	mc.locker.RLock()
+	mc.locker.Unlock()
+	return int64(len(mc.values))
+}
+
+func (mc *memCache) get(key string) (*memCacheValue, bool) {
+	val, ok := mc.values[key]
+	return val, ok
+}
+
+func (mc *memCache) add(key string, val *memCacheValue) {
+	mc.values[key] = val
+	mc.currMemorySize += val.size
+
+}
+func (mc *memCache) del(key string) {
+	tmp, ok := mc.get(key)
+	delete(mc.values, key) //不存在也不会报错
+	if ok && tmp != nil {
+		mc.currMemorySize -= tmp.size
+	}
 }
